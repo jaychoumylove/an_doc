@@ -1,0 +1,22 @@
+第一步：
+cd /data/web/idolzone-api/
+git pull
+
+第二步：
+#爱豆圈子
+\cp -rpf /data/web/idolzone-api/public/* /home/weixin/idolzone-api/public/ && \cp -rpf /data/web/idolzone-api/application/base/* /home/weixin/idolzone-api/application/base/ && \cp -rpf /data/web/idolzone-api/application/route.php /home/weixin/idolzone-api/application/route.php && \cp -rpf /data/web/idolzone-api/application/api/* /home/weixin/idolzone-api/application/api/ && chown -R www: /home/weixin/idolzone-api/
+
+
+###################
+#重启websocket
+php /home/weixin/idolzone-api/start.php restart -d
+
+#重启mysql
+service mysql restart
+
+#重启php-fpm
+service php-fpm restart
+
+#重启nginx
+service nginx restart
+###################
